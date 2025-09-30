@@ -1,0 +1,11 @@
+# List all rules
+netsh advfirewall firewall show rule name=all
+
+# Add rule to block Telnet
+netsh advfirewall firewall add rule name="Block Telnet" protocol=TCP dir=in localport=23 action=block
+
+# Verify rule
+netsh advfirewall firewall show rule name="Block Telnet"
+
+# Delete rule after testing
+netsh advfirewall firewall delete rule name="Block Telnet"
